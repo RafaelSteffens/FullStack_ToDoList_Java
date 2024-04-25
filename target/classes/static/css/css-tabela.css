@@ -1,0 +1,62 @@
+
+    /* Estilos CSS aqui */
+
+
+.container {
+    width: 80%; /* Defina a largura desejada para o container */
+    margin: auto; /* Define as margens automática para centralizar horizontalmente */
+    position: fixed;
+    top: 30%; /* Define o topo como 50% */
+    left: 50%; /* Define a margem esquerda como 50% */
+    transform: translate(-50%, -50%); /* Move o container de volta 50% da sua própria largura e altura */
+}
+
+
+
+.th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px; /* Ajuste o padding  */
+    background-color: #87CEFA; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px; /* Borda arredondada */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transição suave de cor de fundo */
+}
+
+.btn:hover {
+    background-color: #45a049; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilos para a tabela */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px; /* Borda arredondada */
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+
+/* Estilos para as células do cabeçalho */
+th {
+    background-color: #f2f2f2; /* Cor de fundo */
+    padding: 10px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+}
+
+/* Estilos para as células da tabela */
+td {
+    padding: 10px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    border-top: 1px solid #ddd; /* Borda superior */
+}
+

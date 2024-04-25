@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Nova Tarefa</title>
+    <style>
+        .div-centralizada {
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+<br>
+<div class="div-centralizada" >
+    <h1>Adiciona nova tarefa</h1>
+    <br>
+    <div class="form-group">
+        <label for="name">Nome: </label>
+        <input type="text" id="name" class="form-control" name="name" placeholder="Digite um Nome...">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="text">Descrição: </label>
+        <input type="text" id="descricao" class="form-control" name="number" placeholder="Digite a desceição...">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="realizado">Realizado:</label>
+        <select id="realizado">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="number">Prioridade: </1>: </label>
+        <input type="number" id="prioridade" class="form-control" name="number" placeholder="Digite a prioridade de 1 a 10...">
+    </div>
+    <br>
+    <div class="form-group">
+        <button onclick="salvaBD()" class="btn btn-success">Salvar</button>
+    </div>
+    
+    <br>
+</div>
+
+
+</form>
+
+<script>
+    // JavaScript aqui
+    function salvaBD() {
+        const name = document.getElementById('name').value;
+        const descricao = document.getElementById('descricao').value;
+        const realizado = document.getElementById('realizado').value;
+        const prioridade = document.getElementById('prioridade').value;
+
+        const novaTarefa = {
+            name: name,
+            descricao: descricao,
+            realizado: realizado,
+            prioridade: prioridade
+        };
+
+        fetch('http://localhost:8080/todos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(novaTarefa)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Tarefa adicionada com sucesso:', data);
+            // Redireciona para a página "./tabela.html"
+            window.location.href = './tabela.html';
+        })
+        .catch(error => console.error('Erro ao adicionar tarefa:', error));
+    }
+
+</script>
+
+</body>
+</html>
